@@ -19020,7 +19020,7 @@ if (process.env.NODE_ENV === 'production') {
 var React = require('react');
 var createReactClass = require('create-react-class');
 
-var ListItem = React.createClass({
+var ListItem = createReactClass({
     displayName: 'ListItem',
 
     render: function () {
@@ -19045,7 +19045,9 @@ var ListItem = require('./LIstItem.jsx');
 
 var ingredients = [{ "id": 1, "text": "ham1" }, { "id": 2, "text": "ham2" }, { "id": 3, "text": "ham" }];
 
-var List = React.creatClass({
+var List = createReactClass({
+    displayName: 'List',
+
     render: function () {
         var listItems = ingredients.map(function (item) {
             return React.createElement(ListItem, { key: item.id, ingredient: item.text });
